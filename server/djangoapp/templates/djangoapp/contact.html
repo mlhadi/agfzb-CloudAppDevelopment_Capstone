@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dealership Review</title>
+    <title>Best Cars - Contact Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -18,13 +19,25 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars</a>
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="{% url 'djangoapp:index' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'djangoapp:index' %}">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{% url 'djangoapp:about' %}">About</a>
-        <a class="nav-item nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+        <a class="nav-item nav-link active" href="{% url 'djangoapp:contact' %}">Contact Us</a>
       </div>
     </nav>
+    <div class="jumbotron jumbotron-fluid">
+     <div class="container container-fluid vertical-center">
+       <address>
+         Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+         Visit us at:<br>
+         Example.com<br>
+         Box 564, Disneyland<br>
+         USA <br><br>
+         Call us at:<br>
+         999-99-9999
+       </address> 
+      </div>
+    </div>
 
-    <!--Add a dealer table here -->
 
     </body>
 
