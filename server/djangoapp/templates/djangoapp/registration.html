@@ -6,6 +6,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
     <body>
-    <!--Add a registration form here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars</a>
+        <a class="nav-item nav-link active" href="{% url 'djangoapp:index' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'djangoapp:about' %}">About</a>
+        <a class="nav-item nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+      </div>
+    </nav>
+        <div class="container">
+            <h1>Sign Up</h1>
+            <hr>
+            <form method="post", action="{% url 'djangoapp:registration' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input class="form-control" name="inputusername" placeholder="Enter User Name:">
+                </div>
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input class="form-control" name="inputfirstname" placeholder="Enter First Name:">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input class="form-control" name="inputlastname" placeholder="Enter Last Name:">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="inputpassword" placeholder="Enter Password:">
+                </div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </body>
 </html>
