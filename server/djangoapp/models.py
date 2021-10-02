@@ -47,7 +47,7 @@ class CarModel(models.Model):
     year = models.PositiveSmallIntegerField()
 
     def __str__(self):
-        return self.make
+        return self.name
 
 
 # <HINT> Create a plain Python class `CarDealer` to hold dealer data
