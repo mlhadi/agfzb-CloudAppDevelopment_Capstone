@@ -87,7 +87,7 @@ def registration_request(request):
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
     if request.method == "GET":
-        url = "https://bd541e50.us-south.apigw.appdomain.cloud/api/dealership"
+        url = "https://f7400f7f.us-south.apigw.appdomain.cloud/api/dealership"
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name
@@ -98,7 +98,7 @@ def get_dealerships(request):
 
 def get_dealerships_by_state(request, state):
     if request.method == "GET":
-        url = "https://bd541e50.us-south.apigw.appdomain.cloud/api/dealership"
+        url = "https://f7400f7f.us-south.apigw.appdomain.cloud/api/dealership"
         # Get dealers from the URL
         dealerships = get_dealer_by_state_from_cf(url, state)
         # Concat all dealer's short name
@@ -110,7 +110,7 @@ def get_dealerships_by_state(request, state):
 # Create a `get_dealer_details` view to render the reviews of a dealer
 def get_dealer_details(request, dealer_id):
     if request.method == 'GET':
-        url = 'https://bd541e50.us-south.apigw.appdomain.cloud/api/review'
+        url = 'https://f7400f7f.us-south.apigw.appdomain.cloud/api/review'
         reviews = get_dealer_reviews_from_cf(url, dealer_id)
         dealer_reviews = '\n'. join(f'{review.review} {review.sentiment}' for review in reviews)
         return HttpResponse(dealer_reviews)
@@ -129,7 +129,7 @@ def add_review(request, dealer_id):
             "car_model": "A6",
             "car_year": 2010
         }
-        url = 'https://bd541e50.us-south.apigw.appdomain.cloud/api/review'
+        url = 'https://f7400f7f.us-south.apigw.appdomain.cloud/api/review'
         json_payload = dict(review=review)
         post_request(url, json_payload, dealerId=dealer_id)
         return HttpResponse(review)
